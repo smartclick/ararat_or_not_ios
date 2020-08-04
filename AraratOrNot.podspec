@@ -10,6 +10,7 @@ This CocoaPods Library helps you to detect if there is Ararat in the image or no
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Sevak Soghoyan" => "sevak.soghoyan@smartclick.ai" }
   spec.ios.deployment_target = "11.0"
+  spec.swift_version = "4.2"
 
   spec.source       = { :git => "https://github.com/smartclick/ararat_or_not_ios.git", :tag => "#{spec.version}" }
 
