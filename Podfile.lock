@@ -1,0 +1,16 @@
+PODS:
+  - AraratOrNot (0.0.1)
+
+DEPENDENCIES:
+  - AraratOrNot (from `.`)
+
+EXTERNAL SOURCES:
+  AraratOrNot:
+    :path: "."
+
+SPEC CHECKSUMS:
+  AraratOrNot: 2f1443521662ea228435e0875d1948eb7f278f96
+
+PODFILE CHECKSUM: e071ca2d1663668669dba2f9f8165ce58e45a26c
+
+COCOAPODS: 1.9.3

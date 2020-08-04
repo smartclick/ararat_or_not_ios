@@ -1,0 +1,25 @@
+{
+  "name": "AraratOrNot",
+  "version": "0.0.1",
+  "summary": "Detect if there is Ararat in the image or not",
+  "description": "This CocoaPods Library helps you to detect if there is Ararat in the image or not.",
+  "homepage": "https://iararat.am/",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Sevak Soghoyan": "sevak.soghoyan@smartclick.ai"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://gitlab.com/spseso/araratornot.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "AraratOrNot",
+    "AraratOrNot/**/*.{h,m,swift}"
+  ]
+}
