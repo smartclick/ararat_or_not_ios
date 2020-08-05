@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 struct CheckTitleConstants {
-    static var thisIsArarat = ("This is Ararat" ,UIColor.hexStringToUIColor(hex: "#22AD5D"))
-    static var definitelyArarat = ("Definitely Ararat" ,UIColor.hexStringToUIColor(hex: "#ADAD22"))
-    static var mostLikelyArarat = ("Most likely Ararat" ,UIColor.hexStringToUIColor(hex: "#ADAD22"))
-    static var probablyArarat = ("Probably Ararat" ,UIColor.hexStringToUIColor(hex: "#ADAD22"))
-    static var itsNotArarat = ("It`s not Ararat" ,UIColor.hexStringToUIColor(hex: "#ADAD22"))
+    static let thisIsArarat = ("This is Ararat" ,UIColor.init(hex: "#22AD5D"))
+    static let definitelyArarat = ("Definitely Ararat" ,UIColor.init(hex: "#ADAD22"))
+    static let mostLikelyArarat = ("Most likely Ararat" ,UIColor.init(hex: "#ADAD22"))
+    static let probablyArarat = ("Probably Ararat" ,UIColor.init(hex: "#ADAD22"))
+    static let itsNotArarat = ("It`s not Ararat" ,UIColor.init(hex: "#ADAD22"))
+}
+
+struct UIConstants {
+    static let feebackContainerDefaultTopConstraint = CGFloat(34.0)
 }

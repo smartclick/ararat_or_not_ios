@@ -21,8 +21,9 @@ class CheckImageViewController: UIViewController {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var resultButtonsContainerView: UIView!
+    @IBOutlet weak var feedbackContainerView: UIView!
     @IBOutlet weak var checkImageContainerView: UIView!
+    @IBOutlet weak var feedbackContainerViewTopConstraint: NSLayoutConstraint!
     
     private var type:CheckImageViewControllerType!
     private var checkImageResponse: ImageResponse? {
@@ -79,6 +80,11 @@ extension CheckImageViewController {
 //MARK:- Private methods
 extension CheckImageViewController {
     func updateUI() {
+        if #available(iOS 13.0, *) {
+            activityIndicatorView.style = .large
+        } else {
+            activityIndicatorView.style = .whiteLarge
+        }
         checkButton.layer.cornerRadius = 25
         switch type {
         case .imageCheck(let image):
@@ -121,7 +127,7 @@ extension CheckImageViewController {
         resultLabel.text = responseColorText.0
         resultLabel.textColor = responseColorText.1
         checkButton.setTitle("Check another image", for: .normal)
-        resultButtonsContainerView.isHidden = false
+        animateFeedbackContainerView(isShow: true)
         cancelButton.isHidden = true
     }
     
@@ -135,7 +141,11 @@ extension CheckImageViewController {
     }
     
     private func checkAraratOrNot(withImage image: UIImage) {
-        AraratOrNot.detectAraratOrNot(withImage: image) { [unowned self] result in
+        guard let imageData = image.pngData() else {
+            showAlert(withMessage: "Wrong Image")
+            return
+        }
+        AraratOrNot.detectAraratOrNot(withImageData: imageData) { [unowned self] result in
             DispatchQueue.main.async {
                 self.checkResponse(withResutl: result)
             }
@@ -148,8 +158,12 @@ extension CheckImageViewController {
         case .success(let imResponse):
             checkImageResponse = imResponse
         case .failure(let networkError):
-            print(networkError.localizedDescription)
-            showAlert(withMessage: networkError.localizedDescription)
+            switch networkError {
+            case .apiError(let message):
+                showAlert(withMessage: message)
+            default:
+                showAlert(withMessage: networkError.localizedDescription)
+            }
         }
     }
     
@@ -163,11 +177,25 @@ extension CheckImageViewController {
                 self.activityIndicatorView.stopAnimating()
                 switch result {
                 case .success( _):
-                    self.resultButtonsContainerView.isHidden = true
-                case .failure(let error):
-                    self.showAlert(withMessage: error.localizedDescription)
+                    self.animateFeedbackContainerView(isShow: false)
+                case .failure(let networkError):
+                    switch networkError {
+                    case .apiError(let message):
+                        self.showAlert(withMessage: message)
+                    default:
+                        self.showAlert(withMessage: networkError.localizedDescription)
+                    }
                 }
             }
+        }
+    }
+    
+    private func animateFeedbackContainerView(isShow: Bool) {
+        feedbackContainerViewTopConstraint.constant = isShow ? UIConstants.feebackContainerDefaultTopConstraint + feedbackContainerView.frame.height : UIConstants.feebackContainerDefaultTopConstraint
+        let alpha: CGFloat = isShow ? 1 : 0
+        UIView.animate(withDuration: 0.5) {
+            self.feedbackContainerView.alpha = alpha
+            self.view.layoutIfNeeded()
         }
     }
 }

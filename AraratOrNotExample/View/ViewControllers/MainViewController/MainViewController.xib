@@ -127,8 +127,8 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e9X-Ec-DaA">
-                                    <rect key="frame" x="10" y="187" width="355" height="153"/>
-                                    <string key="text">Our next project is devoted to the biblical mountain. A neural network is trained to differentiate between the pictures of Ararat and other mountains. We have gathered a lot of pictures of Ararat to train the neural network to achieve maximum possible accuracy.</string>
+                                    <rect key="frame" x="29" y="187" width="317" height="153"/>
+                                    <string key="text">Our project is devoted to the biblical mountain. A neural network is trained to differentiate between the pictures of Ararat and other mountains. We have gathered a lot of pictures of Ararat to train the neural network to achieve maximum possible accuracy.</string>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -160,14 +160,14 @@
                                 <constraint firstItem="EpH-Qe-rKF" firstAttribute="top" secondItem="z3o-JX-Qex" secondAttribute="top" multiplier="607:503" id="JRt-YB-dfA"/>
                                 <constraint firstItem="lSt-7Z-2WU" firstAttribute="width" secondItem="CaU-uA-vUG" secondAttribute="width" multiplier="0.722667" id="OaH-eT-vef"/>
                                 <constraint firstItem="z3o-JX-Qex" firstAttribute="width" secondItem="CaU-uA-vUG" secondAttribute="width" multiplier="301:375" id="SFU-F8-fYC"/>
+                                <constraint firstItem="e9X-Ec-DaA" firstAttribute="centerX" secondItem="CaU-uA-vUG" secondAttribute="centerX" id="SPH-vd-1us"/>
                                 <constraint firstItem="z3o-JX-Qex" firstAttribute="top" secondItem="STa-H2-waI" secondAttribute="top" multiplier="503:350" id="SYa-Hn-6Im"/>
+                                <constraint firstItem="e9X-Ec-DaA" firstAttribute="width" secondItem="CaU-uA-vUG" secondAttribute="width" multiplier="302:357" id="TrW-0B-GIU"/>
                                 <constraint firstItem="l6T-YP-gHg" firstAttribute="centerX" secondItem="lSt-7Z-2WU" secondAttribute="centerX" id="Tye-fR-0le"/>
                                 <constraint firstItem="STa-H2-waI" firstAttribute="top" secondItem="lSt-7Z-2WU" secondAttribute="top" multiplier="350:125" id="VHV-yG-Vka"/>
                                 <constraint firstItem="STa-H2-waI" firstAttribute="width" secondItem="z3o-JX-Qex" secondAttribute="width" multiplier="307:375" id="VUm-H1-Y3g"/>
                                 <constraint firstAttribute="bottom" secondItem="EpH-Qe-rKF" secondAttribute="top" multiplier="667:607" id="ayI-eC-NML"/>
-                                <constraint firstAttribute="trailing" secondItem="e9X-Ec-DaA" secondAttribute="trailing" constant="10" id="dlW-W0-21G"/>
                                 <constraint firstItem="z3o-JX-Qex" firstAttribute="centerX" secondItem="CaU-uA-vUG" secondAttribute="centerX" id="oIG-5A-1Nf"/>
-                                <constraint firstItem="e9X-Ec-DaA" firstAttribute="leading" secondItem="CaU-uA-vUG" secondAttribute="leading" constant="10" id="zKx-dC-62I"/>
                             </constraints>
                         </view>
                     </subviews>

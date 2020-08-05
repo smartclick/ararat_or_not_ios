@@ -5,15 +5,14 @@
 //  Created by Sevak Soghoyan on 8/3/20.
 //  Copyright © 2020 Sevak Soghoyan. All rights reserved.
 //
-
 import Foundation
 
 public struct Networking {
     //MARK:- Public methods
     public static func checkImageFromUrl(imageUrlLink: String,
                                          completion: @escaping (Result<ImageResponse,NetworkError>) -> Void) {
-        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding
-        guard let url = URL(string: urlString ?? "") else {
+        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding!
+        guard let url = URL(string: urlString) else {
             completion(.failure(.domainError))
             return }
         var urlRequest = URLRequest(url: url)
@@ -24,10 +23,10 @@ public struct Networking {
         Networking.performNetworkTask(type: ImageResponse.self, urlRequest: urlRequest, completion: completion)
     }
     
-    public static func checkImage(image: UIImage,
+    public static func checkImage(imageData: Data,
                                   completion: @escaping (Result<ImageResponse,NetworkError>) -> Void) {
-        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding
-        guard let url = URL(string: urlString ?? "") else {
+        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding!
+        guard let url = URL(string: urlString) else {
             completion(.failure(.domainError))
             return }
         let boundary = UUID().uuidString
@@ -35,7 +34,7 @@ public struct Networking {
         urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
         let httpBody = NSMutableData()
-        httpBody.append(convertFileData(fileData: image.pngData()!,
+        httpBody.append(convertFileData(fileData: imageData,
                                         using: boundary))
         
         httpBody.appendString("--\(boundary)--")
@@ -48,8 +47,8 @@ public struct Networking {
                                     isCorrect: Bool,
                                     completion: @escaping (Result<MessageResponse,NetworkError>) -> Void) {
         let feedbackAPI = IAraratAPI.feedback(imageId: imageId)
-        let urlString = feedbackAPI.baseURL.appendingPathComponent(feedbackAPI.path).absoluteString.removingPercentEncoding
-        guard let url = URL(string: urlString ?? "") else {
+        let urlString = feedbackAPI.baseURL.appendingPathComponent(feedbackAPI.path).absoluteString.removingPercentEncoding!
+        guard let url = URL(string: urlString) else {
             completion(.failure(.domainError))
             return }
         var urlRequest = URLRequest(url: url)

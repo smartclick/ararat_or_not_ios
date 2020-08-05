@@ -153,31 +153,19 @@ extension MainViewController {
     }
     
     @objc func keyboardWasShown(notification: NSNotification){
-        //Need to calculate keyboard exact size due to Apple suggestions
-        self.scrollView.isScrollEnabled = true
         let info = notification.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height, right: 0.0)
-        
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if (!aRect.contains(imageUrlTextField.frame.origin)){
-            self.scrollView.scrollRectToVisible(imageUrlTextField.frame, animated: true)
+        if scrollView.contentOffset.y == 0, let keyboardSize = keyboardSize {
+            scrollView.contentOffset.y += keyboardSize.height
+            scrollView.isScrollEnabled = true
         }
     }
     
     @objc func keyboardWillBeHidden(notification: NSNotification){
-        //Once keyboard disappears, restore original positions
-        let info = notification.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -keyboardSize!.height, right: 0.0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-        self.scrollView.isScrollEnabled = false
+        if scrollView.contentOffset.y != 0 {
+            scrollView.contentOffset.y = 0
+            scrollView.isScrollEnabled = false
+        }
     }
     
 }

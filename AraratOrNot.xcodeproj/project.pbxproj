@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1553570313E8BDFA7B5E3490 /* Pods_AraratOrNotExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8386583008394B4961C5F715 /* Pods_AraratOrNotExample.framework */; };
+		66324C9724D9AA3300903F90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66324C9624D9AA3200903F90 /* UIKit.framework */; platformFilter = ios; };
 		6642DCF424D835FC004F9EA5 /* AraratOrNot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642DCF324D835FC004F9EA5 /* AraratOrNot.swift */; };
 		6642DCF924D83708004F9EA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642DCF724D83708004F9EA5 /* MainViewController.swift */; };
 		6642DCFA24D83708004F9EA5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642DCF824D83708004F9EA5 /* MainViewController.xib */; };
@@ -23,6 +24,8 @@
 		66A8132F24D977BE0012C674 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8132E24D977BE0012C674 /* Constants.swift */; };
 		66A8133124D978260012C674 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8133024D978260012C674 /* ColorExtension.swift */; };
 		66A8133324D985470012C674 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8133224D985470012C674 /* ViewControllerExtension.swift */; };
+		66A8136924D9A12E0012C674 /* AraratOrNotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8136824D9A12E0012C674 /* AraratOrNotTests.swift */; };
+		66A8136B24D9A12E0012C674 /* AraratOrNot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F7BC9324D82F8400C95712 /* AraratOrNot.framework */; };
 		66C8CE7024D9363700554CC3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CE6F24D9363700554CC3 /* Extensions.swift */; };
 		66C8CE7224D9432600554CC3 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CE7124D9432600554CC3 /* MessageResponse.swift */; };
 		66C8CE7424D946E900554CC3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CE7324D946E900554CC3 /* NetworkError.swift */; };
@@ -44,8 +47,19 @@
 		66F7BCC024D82FF900C95712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F7BCBE24D82FF900C95712 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		66A8136C24D9A12E0012C674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66F7BC8A24D82F8400C95712 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66F7BC9224D82F8400C95712;
+			remoteInfo = AraratOrNot;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		64BA95C6FCFE8AF8FB8EC983 /* Pods-AraratOrNotExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AraratOrNotExample.debug.xcconfig"; path = "Target Support Files/Pods-AraratOrNotExample/Pods-AraratOrNotExample.debug.xcconfig"; sourceTree = "<group>"; };
+		66324C9624D9AA3200903F90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6642DCF324D835FC004F9EA5 /* AraratOrNot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AraratOrNot.swift; sourceTree = "<group>"; };
 		6642DCF724D83708004F9EA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6642DCF824D83708004F9EA5 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -61,6 +75,9 @@
 		66A8132E24D977BE0012C674 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		66A8133024D978260012C674 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		66A8133224D985470012C674 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		66A8136624D9A12E0012C674 /* AraratOrNotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AraratOrNotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66A8136824D9A12E0012C674 /* AraratOrNotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AraratOrNotTests.swift; sourceTree = "<group>"; };
+		66A8136A24D9A12E0012C674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C8CE6F24D9363700554CC3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		66C8CE7124D9432600554CC3 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		66C8CE7324D946E900554CC3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -79,26 +96,29 @@
 		66F7BC9324D82F8400C95712 /* AraratOrNot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AraratOrNot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7BC9624D82F8400C95712 /* AraratOrNot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AraratOrNot.h; sourceTree = "<group>"; };
 		66F7BC9724D82F8400C95712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66F7BCA124D82F8500C95712 /* AraratOrNotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AraratOrNotTests.swift; sourceTree = "<group>"; };
-		66F7BCA324D82F8500C95712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F7BCB124D82FF800C95712 /* AraratOrNotExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AraratOrNotExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7BCB324D82FF800C95712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66F7BCB524D82FF800C95712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		66F7BCBF24D82FF900C95712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66F7BCC124D82FF900C95712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66F7BCCA24D82FF900C95712 /* ArararatOrNotExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArararatOrNotExampleTests.swift; sourceTree = "<group>"; };
-		66F7BCCC24D82FF900C95712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66F7BCD524D82FF900C95712 /* ArararatOrNotExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArararatOrNotExampleUITests.swift; sourceTree = "<group>"; };
-		66F7BCD724D82FF900C95712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8386583008394B4961C5F715 /* Pods_AraratOrNotExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AraratOrNotExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E57D1BEFABE234EE1827724 /* Pods-AraratOrNotExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AraratOrNotExample.release.xcconfig"; path = "Target Support Files/Pods-AraratOrNotExample/Pods-AraratOrNotExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		66A8136324D9A12E0012C674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66A8136B24D9A12E0012C674 /* AraratOrNot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F7BC9024D82F8400C95712 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66324C9724D9AA3300903F90 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +210,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		66A8136724D9A12E0012C674 /* AraratOrNotTests */ = {
+			isa = PBXGroup;
+			children = (
+				66A8136824D9A12E0012C674 /* AraratOrNotTests.swift */,
+				66A8136A24D9A12E0012C674 /* Info.plist */,
+			);
+			path = AraratOrNotTests;
+			sourceTree = "<group>";
+		};
 		66C8CE6E24D9362000554CC3 /* Extenesions */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,10 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				66F7BC9524D82F8400C95712 /* AraratOrNot */,
-				66F7BCA024D82F8500C95712 /* AraratOrNotTests */,
 				66F7BCB224D82FF800C95712 /* AraratOrNotExample */,
-				66F7BCC924D82FF900C95712 /* ArararatOrNotExampleTests */,
-				66F7BCD424D82FF900C95712 /* ArararatOrNotExampleUITests */,
+				66A8136724D9A12E0012C674 /* AraratOrNotTests */,
 				66F7BC9424D82F8400C95712 /* Products */,
 				237D5D30E0360751F7111D26 /* Pods */,
 				8E6E74DD248F67C8E5799FEB /* Frameworks */,
@@ -253,6 +280,7 @@
 			children = (
 				66F7BC9324D82F8400C95712 /* AraratOrNot.framework */,
 				66F7BCB124D82FF800C95712 /* AraratOrNotExample.app */,
+				66A8136624D9A12E0012C674 /* AraratOrNotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,15 +298,6 @@
 			path = AraratOrNot;
 			sourceTree = "<group>";
 		};
-		66F7BCA024D82F8500C95712 /* AraratOrNotTests */ = {
-			isa = PBXGroup;
-			children = (
-				66F7BCA124D82F8500C95712 /* AraratOrNotTests.swift */,
-				66F7BCA324D82F8500C95712 /* Info.plist */,
-			);
-			path = AraratOrNotTests;
-			sourceTree = "<group>";
-		};
 		66F7BCB224D82FF800C95712 /* AraratOrNotExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,24 +307,6 @@
 				66F7BCE124D8300700C95712 /* Application */,
 			);
 			path = AraratOrNotExample;
-			sourceTree = "<group>";
-		};
-		66F7BCC924D82FF900C95712 /* ArararatOrNotExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				66F7BCCA24D82FF900C95712 /* ArararatOrNotExampleTests.swift */,
-				66F7BCCC24D82FF900C95712 /* Info.plist */,
-			);
-			path = ArararatOrNotExampleTests;
-			sourceTree = "<group>";
-		};
-		66F7BCD424D82FF900C95712 /* ArararatOrNotExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				66F7BCD524D82FF900C95712 /* ArararatOrNotExampleUITests.swift */,
-				66F7BCD724D82FF900C95712 /* Info.plist */,
-			);
-			path = ArararatOrNotExampleUITests;
 			sourceTree = "<group>";
 		};
 		66F7BCE124D8300700C95712 /* Application */ = {
@@ -321,6 +322,7 @@
 		8E6E74DD248F67C8E5799FEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66324C9624D9AA3200903F90 /* UIKit.framework */,
 				8386583008394B4961C5F715 /* Pods_AraratOrNotExample.framework */,
 			);
 			name = Frameworks;
@@ -340,6 +342,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		66A8136524D9A12E0012C674 /* AraratOrNotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66A8136E24D9A12E0012C674 /* Build configuration list for PBXNativeTarget "AraratOrNotTests" */;
+			buildPhases = (
+				66A8136224D9A12E0012C674 /* Sources */,
+				66A8136324D9A12E0012C674 /* Frameworks */,
+				66A8136424D9A12E0012C674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66A8136D24D9A12E0012C674 /* PBXTargetDependency */,
+			);
+			name = AraratOrNotTests;
+			productName = AraratOrNotTests;
+			productReference = 66A8136624D9A12E0012C674 /* AraratOrNotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		66F7BC9224D82F8400C95712 /* AraratOrNot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66F7BCA724D82F8500C95712 /* Build configuration list for PBXNativeTarget "AraratOrNot" */;
@@ -387,6 +407,9 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Sevak Soghoyan";
 				TargetAttributes = {
+					66A8136524D9A12E0012C674 = {
+						CreatedOnToolsVersion = 11.6;
+					};
 					66F7BC9224D82F8400C95712 = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
@@ -411,11 +434,19 @@
 			targets = (
 				66F7BC9224D82F8400C95712 /* AraratOrNot */,
 				66F7BCB024D82FF800C95712 /* AraratOrNotExample */,
+				66A8136524D9A12E0012C674 /* AraratOrNotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		66A8136424D9A12E0012C674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F7BC9124D82F8400C95712 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +522,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		66A8136224D9A12E0012C674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66A8136924D9A12E0012C674 /* AraratOrNotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F7BC8F24D82F8400C95712 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,6 +563,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		66A8136D24D9A12E0012C674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66F7BC9224D82F8400C95712 /* AraratOrNot */;
+			targetProxy = 66A8136C24D9A12E0012C674 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		66F7BCBE24D82FF900C95712 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -536,6 +583,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		66A8136F24D9A12E0012C674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B25SCAYUXH;
+				INFOPLIST_FILE = AraratOrNotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.smartclick.AraratOrNotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66A8137024D9A12E0012C674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B25SCAYUXH;
+				INFOPLIST_FILE = AraratOrNotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.smartclick.AraratOrNotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		66F7BCA524D82F8500C95712 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -754,6 +837,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		66A8136E24D9A12E0012C674 /* Build configuration list for PBXNativeTarget "AraratOrNotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66A8136F24D9A12E0012C674 /* Debug */,
+				66A8137024D9A12E0012C674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66F7BC8D24D82F8400C95712 /* Build configuration list for PBXProject "AraratOrNot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

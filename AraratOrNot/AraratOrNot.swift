@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public final class AraratOrNot {
-    public static func detectAraratOrNot(withImage image: UIImage, completion:@escaping ((Result<ImageResponse,NetworkError>) -> ())) {
-        Networking.checkImage(image: image, completion: completion)
+    public static func detectAraratOrNot(withImageData imageData: Data, completion:@escaping ((Result<ImageResponse,NetworkError>) -> ())) {        
+        Networking.checkImage(imageData: imageData, completion: completion)
     }
     
     public static func detectAraratOrNot(withImageLinkPath imageLink: String, completion:@escaping ((Result<ImageResponse,NetworkError>) -> ())) {

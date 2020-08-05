@@ -12,8 +12,8 @@ import Foundation
 public extension Dictionary {
     func percentEncoded() -> Data? {
         return map { key, value in
-            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed)!
+            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed)!
             return escapedKey + "=" + escapedValue
         }
         .joined(separator: "&")
