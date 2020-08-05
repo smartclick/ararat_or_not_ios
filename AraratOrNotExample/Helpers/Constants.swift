@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct CheckTitleConstants {
+enum CheckTitleConstants {
     static let thisIsArarat = ("This is Ararat" ,UIColor.init(hex: "#22AD5D"))
     static let definitelyArarat = ("Definitely Ararat" ,UIColor.init(hex: "#ADAD22"))
     static let mostLikelyArarat = ("Most likely Ararat" ,UIColor.init(hex: "#ADAD22"))
@@ -17,6 +17,6 @@ struct CheckTitleConstants {
     static let itsNotArarat = ("It`s not Ararat" ,UIColor.init(hex: "#ADAD22"))
 }
 
-struct UIConstants {
+enum UIConstants {
     static let feebackContainerDefaultTopConstraint = CGFloat(34.0)
 }
