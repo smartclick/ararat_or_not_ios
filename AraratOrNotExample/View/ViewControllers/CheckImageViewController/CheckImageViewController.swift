@@ -86,6 +86,7 @@ extension CheckImageViewController {
             activityIndicatorView.style = .whiteLarge
         }
         checkButton.layer.cornerRadius = 25
+        checkImageContainerView.layer.cornerRadius = 25
         switch type {
         case .imageCheck(let image):
             previewImageView.image = image

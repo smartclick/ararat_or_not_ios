@@ -97,6 +97,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-zo-ZA6">
                                             <rect key="frame" x="231" y="0.0" width="70" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="vpg-eR-Hxw"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                             <state key="normal" title="Go !" backgroundImage="go_button_bg">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,11 +120,12 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Xr9-Va-5vJ" secondAttribute="bottom" id="8pb-tC-ogA"/>
-                                        <constraint firstItem="cRa-zo-ZA6" firstAttribute="width" secondItem="z3o-JX-Qex" secondAttribute="width" multiplier="0.232558" id="OLu-H8-OJm"/>
+                                        <constraint firstItem="Xr9-Va-5vJ" firstAttribute="leading" secondItem="z3o-JX-Qex" secondAttribute="leading" constant="16" id="F79-rZ-q6g"/>
+                                        <constraint firstItem="cRa-zo-ZA6" firstAttribute="width" secondItem="z3o-JX-Qex" secondAttribute="width" multiplier="0.232558" priority="999" id="OLu-H8-OJm"/>
                                         <constraint firstAttribute="trailing" secondItem="cRa-zo-ZA6" secondAttribute="trailing" id="b2F-I6-0wW"/>
                                         <constraint firstItem="Xr9-Va-5vJ" firstAttribute="top" secondItem="z3o-JX-Qex" secondAttribute="top" id="cce-Sg-BN1"/>
                                         <constraint firstAttribute="bottom" secondItem="cRa-zo-ZA6" secondAttribute="bottom" id="gSO-g0-qdQ"/>
-                                        <constraint firstItem="Xr9-Va-5vJ" firstAttribute="width" secondItem="z3o-JX-Qex" secondAttribute="width" multiplier="215:301" id="k9r-sZ-uE2"/>
+                                        <constraint firstAttribute="height" constant="48" id="gqg-ZD-kDt"/>
                                         <constraint firstItem="cRa-zo-ZA6" firstAttribute="top" secondItem="z3o-JX-Qex" secondAttribute="top" id="lND-ti-bjs"/>
                                         <constraint firstItem="cRa-zo-ZA6" firstAttribute="leading" secondItem="Xr9-Va-5vJ" secondAttribute="trailing" id="xMK-iS-fLn"/>
                                     </constraints>
@@ -148,7 +152,6 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="z3o-JX-Qex" firstAttribute="height" secondItem="CaU-uA-vUG" secondAttribute="height" multiplier="48:667" id="080-zE-oTn"/>
                                 <constraint firstItem="EpH-Qe-rKF" firstAttribute="width" secondItem="CaU-uA-vUG" secondAttribute="width" multiplier="0.48" id="3qP-nh-Enj"/>
                                 <constraint firstItem="STa-H2-waI" firstAttribute="height" secondItem="CaU-uA-vUG" secondAttribute="height" multiplier="131:667" id="4bn-DL-fGT"/>
                                 <constraint firstItem="e9X-Ec-DaA" firstAttribute="top" secondItem="lSt-7Z-2WU" secondAttribute="bottom" constant="10" id="4ci-0p-tXM"/>
