@@ -40,11 +40,7 @@ extension MainViewController {
     }
     
     @IBAction func goButtonAction(_ sender: Any) {
-        guard let text = imageUrlTextField.text, text.count > 0,let _ = URL(string: text) else {
-            showAlert(withMessage: "Wrong URL")
-            return
-        }
-        presentCheckImageView(type: .linkCheck(imageUrlStr: text))
+        checkURLAndPresentCheckImageView()
     }
     
     //Calls this function when the tap is recognized.
@@ -62,7 +58,7 @@ extension MainViewController {
         addTapGesture()
     }
     
-    func addTapGesture() {
+    private func addTapGesture() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -92,6 +88,14 @@ extension MainViewController {
         present(alertController, animated: true)
     }
     
+    private func checkURLAndPresentCheckImageView() {
+        guard let text = imageUrlTextField.text, text.count > 0,let _ = URL(string: text) else {
+            showAlert(withMessage: "Wrong URL")
+            return
+        }
+        presentCheckImageView(type: .linkCheck(imageUrlStr: text))
+    }
+    
     private func presentCheckImageView(type: CheckImageViewControllerType) {
         dismissKeyboard()
         let checkImageVC = CheckImageViewController(withType: type)
@@ -116,11 +120,7 @@ extension MainViewController {
 extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         imageUrlTextField.resignFirstResponder()
-        guard let text = imageUrlTextField.text, text.count > 0 else {
-            showAlert(withMessage: "Wrong URL")
-            return true
-        }
-        presentCheckImageView(type: .linkCheck(imageUrlStr: text))
+        checkURLAndPresentCheckImageView()
         return true
     }
 }

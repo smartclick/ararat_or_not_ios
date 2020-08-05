@@ -7,56 +7,51 @@
 //
 import Foundation
 
+public enum HTTPMethods: String {
+    case POST,PUT,DELETE,GET
+}
+
 public struct Networking {
     //MARK:- Public methods
     public static func checkImageFromUrl(imageUrlLink: String,
                                          completion: @escaping (Result<ImageResponse,NetworkError>) -> Void) {
-        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding!
-        guard let url = URL(string: urlString) else {
-            completion(.failure(.domainError))
-            return }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpMethod = "POST"
         let parameters = ["url": imageUrlLink]
-        urlRequest.httpBody = parameters.percentEncoded()
-        Networking.performNetworkTask(type: ImageResponse.self, urlRequest: urlRequest, completion: completion)
+        performTask(endpointAPI: IAraratAPI.image, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self, completion: completion)
     }
     
     public static func checkImage(imageData: Data,
                                   completion: @escaping (Result<ImageResponse,NetworkError>) -> Void) {
-        let urlString = IAraratAPI.image.baseURL.appendingPathComponent(IAraratAPI.image.path).absoluteString.removingPercentEncoding!
-        guard let url = URL(string: urlString) else {
-            completion(.failure(.domainError))
-            return }
         let boundary = UUID().uuidString
-        var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpMethod = "POST"
         let httpBody = NSMutableData()
         httpBody.append(convertFileData(fileData: imageData,
                                         using: boundary))
-        
         httpBody.appendString("--\(boundary)--")
-        
-        urlRequest.httpBody = httpBody as Data
-        Networking.performNetworkTask(type: ImageResponse.self, urlRequest: urlRequest, completion: completion)
+        performTask(endpointAPI: IAraratAPI.image, httpMethod: .POST, contentType: "multipart/form-data; boundary=\(boundary)", httpBody: httpBody as Data, type: ImageResponse.self, completion: completion)
     }
     
     public static func sendFeedback(imageId: String,
                                     isCorrect: Bool,
                                     completion: @escaping (Result<MessageResponse,NetworkError>) -> Void) {
         let feedbackAPI = IAraratAPI.feedback(imageId: imageId)
-        let urlString = feedbackAPI.baseURL.appendingPathComponent(feedbackAPI.path).absoluteString.removingPercentEncoding!
+        let parameters = ["is_correct": isCorrect ? "1": "0"]
+        performTask(endpointAPI: feedbackAPI, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: MessageResponse.self, completion: completion)
+    }
+    
+    public static func performTask<T: Decodable>(endpointAPI: EndpointType,
+                                   httpMethod: HTTPMethods,
+                                   contentType: String,
+                                   httpBody: Data,
+                                   type: T.Type,
+                                   completion: @escaping (Result<T,NetworkError>) -> Void) {
+        let urlString = endpointAPI.baseURL.appendingPathComponent(endpointAPI.path).absoluteString.removingPercentEncoding!
         guard let url = URL(string: urlString) else {
             completion(.failure(.domainError))
             return }
         var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpMethod = "POST"
-        let parameters = ["is_correct": isCorrect ? "1": "0"]
-        urlRequest.httpBody = parameters.percentEncoded()
-        Networking.performNetworkTask(type: MessageResponse.self, urlRequest: urlRequest, completion: completion)
+        urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = httpBody
+        performNetworkTask(type: T.self, urlRequest: urlRequest, completion: completion)
     }
     
     //MARK:- Private methods
@@ -67,7 +62,6 @@ public struct Networking {
             guard let data = data,
                 let response = urlResponse as? HTTPURLResponse,
                 error == nil else {                                              // check for fundamental networking error
-                    print("error", error ?? "Unknown error")
                     completion(.failure(.domainError))
                     return
             }

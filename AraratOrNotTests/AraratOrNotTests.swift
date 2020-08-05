@@ -9,6 +9,20 @@
 import XCTest
 @testable import AraratOrNot
 
+enum IAraratAPIMock {
+    case test
+}
+
+extension IAraratAPIMock: EndpointType {
+    public var baseURL: URL {
+        return URL(string: "htt")!
+    }
+
+    public var path: String {
+        return ""
+    }
+}
+
 class AraratOrNotTests: XCTestCase {
     
     override func setUpWithError() throws {
@@ -107,6 +121,40 @@ class AraratOrNotTests: XCTestCase {
             print(error?.localizedDescription ?? "error")
         }
         
+    }
+    
+    func testPerformDataTask() {
+        let notCorrectexp = expectation(description: "Failing perform network data task")
+        let parameters = ["is_correct": "1"]
+        Networking.performTask(endpointAPI: IAraratAPI.feedback(imageId: "49c9a300-c0fa-42b3-89c5-25b9be2e86aa"), httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
+            switch result {
+            case .failure(let networkError):
+                XCTAssertNotNil(networkError)
+            default:
+                break
+            }
+            notCorrectexp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { (error) in
+            print(error?.localizedDescription ?? "error")
+        }
+    }
+    
+    func testPerformDataTaskFailURL() {
+        let notCorrectexp = expectation(description: "Failing perform network data task")
+        let parameters = ["is_correct": "1"]
+        Networking.performTask(endpointAPI: IAraratAPIMock.test, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
+            switch result {
+            case .failure(let networkError):
+                XCTAssertNotNil(networkError)
+            default:
+                break
+            }
+            notCorrectexp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { (error) in
+            print(error?.localizedDescription ?? "error")
+        }
     }
     
     func testPerformanceExample() throws {

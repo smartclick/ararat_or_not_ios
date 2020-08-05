@@ -1,6 +1,6 @@
 {
   "name": "AraratOrNot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "Detect if there is Ararat in the image or not",
   "description": "This CocoaPods Library helps you to detect if there is Ararat in the image or not.",
   "homepage": "https://iararat.am/",
@@ -17,7 +17,7 @@
   "swift_versions": "4.2",
   "source": {
     "git": "https://github.com/smartclick/ararat_or_not_ios.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "source_files": [
     "AraratOrNot",

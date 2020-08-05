@@ -1,5 +1,5 @@
 PODS:
-  - AraratOrNot (0.0.1)
+  - AraratOrNot (0.0.2)
 
 DEPENDENCIES:
   - AraratOrNot (from `.`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  AraratOrNot: 7c336956cdfcf59844514e2db5ebcaff4f3dcf09
+  AraratOrNot: a6e6dcaa422ee55141cd07355dd42778b0e1f4e7
 
 PODFILE CHECKSUM: e071ca2d1663668669dba2f9f8165ce58e45a26c
 
