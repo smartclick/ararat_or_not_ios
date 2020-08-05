@@ -10,16 +10,26 @@ import XCTest
 @testable import AraratOrNot
 
 enum IAraratAPIMock {
-    case test
+    case testDomain, test
 }
 
 extension IAraratAPIMock: EndpointType {
-    public var baseURL: URL {
-        return URL(string: "htt")!
+    public var baseURL: String {
+        switch self {
+        case .test:
+            return "https://api.iararat.am"
+        default:
+            return ""
+        }
     }
 
     public var path: String {
-        return ""
+        switch self {
+        case .test:
+            return "test"
+        default:
+            return ""
+        }
     }
 }
 
@@ -141,7 +151,7 @@ class AraratOrNotTests: XCTestCase {
     }
     
     func testPerformDataTaskFailURL() {
-        let notCorrectexp = expectation(description: "Failing perform network data task")
+        let firstExp = expectation(description: "Testing broken URL")
         let parameters = ["is_correct": "1"]
         Networking.performTask(endpointAPI: IAraratAPIMock.test, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
             switch result {
@@ -150,7 +160,17 @@ class AraratOrNotTests: XCTestCase {
             default:
                 break
             }
-            notCorrectexp.fulfill()
+            firstExp.fulfill()
+        }
+        let secExp = expectation(description: "Testing wrong domain")
+        Networking.performTask(endpointAPI: IAraratAPIMock.testDomain, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
+            switch result {
+            case .failure(let networkError):
+                XCTAssertNotNil(networkError)
+            default:
+                break
+            }
+            secExp.fulfill()
         }
         waitForExpectations(timeout: 10) { (error) in
             print(error?.localizedDescription ?? "error")

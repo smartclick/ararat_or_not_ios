@@ -14,8 +14,8 @@ public enum IAraratAPI {
 }
 
 extension IAraratAPI: EndpointType {
-    public var baseURL: URL {
-        return URL(string: "https://api.iararat.am")!
+    public var baseURL: String {
+        return "https://api.iararat.am"
     }
 
     public var path: String {

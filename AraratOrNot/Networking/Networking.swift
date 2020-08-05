@@ -43,7 +43,7 @@ public struct Networking {
                                    httpBody: Data,
                                    type: T.Type,
                                    completion: @escaping (Result<T,NetworkError>) -> Void) {
-        let urlString = endpointAPI.baseURL.appendingPathComponent(endpointAPI.path).absoluteString.removingPercentEncoding!
+        let urlString = (endpointAPI.baseURL + endpointAPI.path).removingPercentEncoding!
         guard let url = URL(string: urlString) else {
             completion(.failure(.domainError))
             return }

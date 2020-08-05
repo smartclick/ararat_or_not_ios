@@ -111,6 +111,7 @@ extension MainViewController {
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = sourceType
+            imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker, animated: true, completion: nil)
         }
     }
