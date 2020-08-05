@@ -98,20 +98,17 @@ extension CheckImageViewController {
     }
     
     private func updateUI(withImageUrl imageUrlStr: String) {
-        if let url = URL(string: imageUrlStr) {
-            activityIndicatorView.startAnimating()
-            checkImageContainerView.isHidden = true
-            previewImageView.load(url: url,completion: { isSuccess in
-                if !isSuccess {
-                    self.showWrongUrlAlert()
-                } else {
-                    self.checkImageContainerView.isHidden = false
-                }
-                self.activityIndicatorView.stopAnimating()
-            })
-        } else {
-            showWrongUrlAlert()
-        }
+        let url = URL(string: imageUrlStr)!
+        activityIndicatorView.startAnimating()
+        checkImageContainerView.isHidden = true
+        previewImageView.load(url: url,completion: { isSuccess in
+            if !isSuccess {
+                self.showWrongUrlAlert()
+            } else {
+                self.checkImageContainerView.isHidden = false
+            }
+            self.activityIndicatorView.stopAnimating()
+        })    
     }
     
     private func showWrongUrlAlert() {

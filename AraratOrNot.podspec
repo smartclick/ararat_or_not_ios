@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "AraratOrNot"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Detect if there is Ararat in the image or not"
   spec.description  = <<-DESC
 This CocoaPods Library helps you to detect if there is Ararat in the image or not.

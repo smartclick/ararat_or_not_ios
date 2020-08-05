@@ -40,7 +40,7 @@ extension MainViewController {
     }
     
     @IBAction func goButtonAction(_ sender: Any) {
-        guard let text = imageUrlTextField.text, text.count > 0 else {
+        guard let text = imageUrlTextField.text, text.count > 0,let _ = URL(string: text) else {
             showAlert(withMessage: "Wrong URL")
             return
         }
