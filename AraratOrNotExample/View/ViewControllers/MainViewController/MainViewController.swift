@@ -139,6 +139,7 @@ extension MainViewController: UIImagePickerControllerDelegate,UINavigationContro
             selectedImage = originalImage
         }
         guard selectedImage != nil else {
+            picker.dismiss(animated: true)
             return
         }
         picker.dismiss(animated: true, completion: {
