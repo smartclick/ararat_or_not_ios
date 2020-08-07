@@ -117,7 +117,7 @@ extension CheckImageViewController {
         }
     }
     
-    func updateUIAfterResponse() {
+    private func updateUIAfterResponse() {
         guard let imageResponse = checkImageResponse else {
             return
         }

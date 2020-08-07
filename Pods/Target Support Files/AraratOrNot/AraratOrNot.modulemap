@@ -1,6 +1,0 @@
-framework module AraratOrNot {
-  umbrella header "AraratOrNot-umbrella.h"
-
-  export *
-  module * { export * }
-}
