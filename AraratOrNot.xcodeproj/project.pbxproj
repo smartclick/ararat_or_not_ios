@@ -18,7 +18,6 @@
 		6642DD0924D85407004F9EA5 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642DD0824D85407004F9EA5 /* ImageResponse.swift */; };
 		66880C1124D96576000C15AF /* CheckImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880C0F24D96576000C15AF /* CheckImageViewController.swift */; };
 		66880C1224D96576000C15AF /* CheckImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66880C1024D96576000C15AF /* CheckImageViewController.xib */; };
-		66975E9224DD66950024C3FF /* AraratOrNot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F7BC9324D82F8400C95712 /* AraratOrNot.framework */; };
 		66A8132B24D970B10012C674 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8132A24D970B10012C674 /* ImageViewExtension.swift */; };
 		66A8132D24D977000012C674 /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8132C24D977000012C674 /* UtilityMethods.swift */; };
 		66A8132F24D977BE0012C674 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8132E24D977BE0012C674 /* Constants.swift */; };
@@ -41,6 +40,8 @@
 		66C8CE8E24D94BA200554CC3 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8CE8224D94BA200554CC3 /* Roboto-Bold.ttf */; };
 		66C8CE8F24D94BA200554CC3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8CE8324D94BA200554CC3 /* Roboto-Thin.ttf */; };
 		66C8CE9024D94BA200554CC3 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8CE8424D94BA200554CC3 /* Roboto-Black.ttf */; };
+		66E4907324E130F4004258FD /* AraratOrNot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F7BC9324D82F8400C95712 /* AraratOrNot.framework */; };
+		66E4907424E130F4004258FD /* AraratOrNot.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66F7BC9324D82F8400C95712 /* AraratOrNot.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		66F7BCA424D82F8500C95712 /* AraratOrNot.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F7BC9624D82F8400C95712 /* AraratOrNot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66F7BCB424D82FF800C95712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7BCB324D82FF800C95712 /* AppDelegate.swift */; };
 		66F7BCB624D82FF800C95712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7BCB524D82FF800C95712 /* SceneDelegate.swift */; };
@@ -56,6 +57,20 @@
 			remoteInfo = AraratOrNot;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66E4907524E130F5004258FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				66E4907424E130F4004258FD /* AraratOrNot.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		66324C9624D9AA3200903F90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -123,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66975E9224DD66950024C3FF /* AraratOrNot.framework in Frameworks */,
+				66E4907324E130F4004258FD /* AraratOrNot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +386,7 @@
 				66F7BCAD24D82FF800C95712 /* Sources */,
 				66F7BCAE24D82FF800C95712 /* Frameworks */,
 				66F7BCAF24D82FF800C95712 /* Resources */,
+				66E4907524E130F5004258FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

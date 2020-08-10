@@ -33,7 +33,7 @@ public struct Networking {
                                     isCorrect: Bool,
                                     completion: @escaping (Result<MessageResponse,NetworkError>) -> Void) {
         let feedbackAPI = IAraratAPI.feedback(imageId: imageId)
-        let parameters = ["is_correct": isCorrect ? "1": "0"]
+        let parameters = ["is_correct": isCorrect]
         performTask(endpointAPI: feedbackAPI, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: MessageResponse.self, completion: completion)
     }
     

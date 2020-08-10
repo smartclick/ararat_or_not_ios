@@ -135,7 +135,7 @@ class AraratOrNotTests: XCTestCase {
     
     func testPerformDataTask() {
         let notCorrectexp = expectation(description: "Failing perform network data task")
-        let parameters = ["is_correct": "1"]
+        let parameters = ["is_correct": true]
         Networking.performTask(endpointAPI: IAraratAPI.feedback(imageId: "49c9a300-c0fa-42b3-89c5-25b9be2e86aa"), httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
             switch result {
             case .failure(let networkError):
@@ -152,7 +152,7 @@ class AraratOrNotTests: XCTestCase {
     
     func testPerformDataTaskFailURL() {
         let firstExp = expectation(description: "Testing broken URL")
-        let parameters = ["is_correct": "1"]
+        let parameters = ["is_correct": true]
         Networking.performTask(endpointAPI: IAraratAPIMock.test, httpMethod: .POST, contentType: "application/x-www-form-urlencoded", httpBody: parameters.percentEncoded()!, type: ImageResponse.self) { (result) in
             switch result {
             case .failure(let networkError):
