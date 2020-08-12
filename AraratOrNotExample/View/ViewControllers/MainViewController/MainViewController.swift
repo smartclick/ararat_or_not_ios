@@ -13,6 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageUrlTextField: UITextField!
     @IBOutlet weak var urlContainerView: UIView!
+    
+    var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.modalPresentationStyle = .fullScreen
+        return imagePicker
+    }()
 }
 
 // MARK:- View Lifecycle
@@ -61,7 +68,6 @@ extension MainViewController {
     private func addTapGesture() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
     
     private func presentAlrertController() {
@@ -108,12 +114,9 @@ extension MainViewController {
     
     private func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         dismissKeyboard()
-        if UIImagePickerController.isSourceTypeAvailable(sourceType){
-            let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(sourceType){            
             imagePicker.delegate = self
-            imagePicker.allowsEditing = true
             imagePicker.sourceType = sourceType
-            imagePicker.modalPresentationStyle = .fullScreen
             present(imagePicker, animated: true, completion: nil)
         }
     }
