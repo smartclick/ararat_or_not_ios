@@ -15,6 +15,6 @@ This CocoaPods Library helps you to detect if there is Ararat in the image or no
   spec.source       = { :git => "https://github.com/smartclick/ararat_or_not_ios.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "AraratOrNot","AraratOrNot/**/*.{h,m,swift}"
-  spec.exclude_files = "AraratOrNot/Networkin/**'"
+  spec.exclude_files = "AraratOrNot/Networking/**'"
 
 end
