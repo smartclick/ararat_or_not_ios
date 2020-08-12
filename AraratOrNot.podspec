@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "AraratOrNot"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "Detect if there is Ararat in the image or not"
   spec.description  = <<-DESC
 This CocoaPods Library helps you to detect if there is Ararat in the image or not.
@@ -15,5 +15,6 @@ This CocoaPods Library helps you to detect if there is Ararat in the image or no
   spec.source       = { :git => "https://github.com/smartclick/ararat_or_not_ios.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "AraratOrNot","AraratOrNot/**/*.{h,m,swift}"
+  spec.exclude_files = "AraratOrNot/Networkin/**'"
 
 end
