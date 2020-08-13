@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66324C9724D9AA3300903F90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66324C9624D9AA3200903F90 /* UIKit.framework */; platformFilter = ios; };
+		66358D8324E515BB00BB69D8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66358D8224E515BB00BB69D8 /* UIViewExtensions.swift */; };
 		6642DCF424D835FC004F9EA5 /* AraratOrNot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642DCF324D835FC004F9EA5 /* AraratOrNot.swift */; };
 		6642DCF924D83708004F9EA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642DCF724D83708004F9EA5 /* MainViewController.swift */; };
 		6642DCFA24D83708004F9EA5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642DCF824D83708004F9EA5 /* MainViewController.xib */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		66324C9624D9AA3200903F90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		66358D8224E515BB00BB69D8 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		6642DCF324D835FC004F9EA5 /* AraratOrNot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AraratOrNot.swift; sourceTree = "<group>"; };
 		6642DCF724D83708004F9EA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6642DCF824D83708004F9EA5 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				66A8132C24D977000012C674 /* UtilityMethods.swift */,
 				66A8132E24D977BE0012C674 /* Constants.swift */,
 				66A8133224D985470012C674 /* ViewControllerExtension.swift */,
+				66358D8224E515BB00BB69D8 /* UIViewExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				66A8132B24D970B10012C674 /* ImageViewExtension.swift in Sources */,
 				66A8133124D978260012C674 /* ColorExtension.swift in Sources */,
 				6642DCF924D83708004F9EA5 /* MainViewController.swift in Sources */,
+				66358D8324E515BB00BB69D8 /* UIViewExtensions.swift in Sources */,
 				66A8132F24D977BE0012C674 /* Constants.swift in Sources */,
 				66F7BCB624D82FF800C95712 /* SceneDelegate.swift in Sources */,
 				66A8132D24D977000012C674 /* UtilityMethods.swift in Sources */,

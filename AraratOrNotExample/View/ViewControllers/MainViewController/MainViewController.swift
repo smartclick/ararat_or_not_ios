@@ -146,7 +146,8 @@ extension MainViewController: UIImagePickerControllerDelegate,UINavigationContro
             return
         }
         picker.dismiss(animated: true, completion: {
-            self.presentCheckImageView(type: .imageCheck(image: selectedImage!))
+            let resizedImage = selectedImage!.resizeImageWith(newSizeValue: CGFloat(224.0))
+            self.presentCheckImageView(type: .imageCheck(image: resizedImage!))
         })
     }
 }
